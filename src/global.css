@@ -72,7 +72,7 @@
 
 @font-face {
   font-family: 'CalSans';
-  src: url('./src/assets/fonts/CalSans-SemiBold.woff2') format('truetype');
+  src: url('@/assets/fonts/CalSans-SemiBold.woff2') format('truetype');
   font-weight: 800; /* Ajuste conforme necessário */
   font-style: normal;
 }
