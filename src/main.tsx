@@ -8,7 +8,7 @@ import { ThemeProvider } from './components/theme/theme-provider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider storageKey="@pje-theme" defaultTheme="light">
+    <ThemeProvider storageKey="@pje-theme" defaultTheme="system">
       <App />
     </ThemeProvider>
   </StrictMode>,

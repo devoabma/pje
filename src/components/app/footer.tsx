@@ -31,10 +31,10 @@ export function Footer() {
         >
           <Link to="/">
             <div className="flex items-center justify-center">
-              {theme === 'dark' ? (
-                <img src={LogoWhite} className="h-10" alt="OAB Maranhão" />
+              {theme === 'light' ? (
+                <img src={LogoDark} className="h-12" alt="OAB Maranhão" />
               ) : (
-                <img src={LogoDark} className="h-10" alt="OAB Maranhão" />
+                <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
               )}
             </div>
           </Link>

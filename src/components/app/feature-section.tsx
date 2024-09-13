@@ -166,7 +166,7 @@ const items = [
 
 export function FeatureSection() {
   return (
-    <section className="mt-5 space-y-8 rounded-sm border bg-muted-foreground/5 px-3 md:py-12 lg:py-20">
+    <section className="mt-5 space-y-8 rounded-sm border bg-muted-foreground/10 dark:bg-muted-foreground/5 md:py-12 lg:py-20">
       <motion.div
         className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center max-md:mt-10"
         initial={{ opacity: 0, x: -100 }}

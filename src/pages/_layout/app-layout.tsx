@@ -20,7 +20,7 @@ export function AppLayout() {
           Hoje, {day} de {fullMonth} de {year}
         </p>
 
-        <div className="mb-28">
+        <div className="mb-24">
           <Outlet />
         </div>
 
