@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from 'react-router-dom'
 import { Toaster } from 'sonner'
@@ -15,6 +16,8 @@ export function App() {
       </Helmet>
       <RouterProvider router={router} />
       <Toaster richColors closeButton theme={theme} />
+
+      <Analytics />
     </HelmetProvider>
   )
 }
