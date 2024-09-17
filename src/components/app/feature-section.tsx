@@ -91,7 +91,7 @@ const items = [
     trigger:
       '5. Instalação: Softwares requeridos para o Sistema Operacional MacOS.',
     content: (
-      <div className="mx-auto grid items-center justify-start gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         <FeatureSectionLink linkPreview={LINK_JAVA_MACOS_PREVIEW}>
           Java Standard Edition (Java SE)
         </FeatureSectionLink>
@@ -115,7 +115,7 @@ const items = [
     trigger:
       '6. Instalação: Software pJe-Calc para o Sistema Operacional Windows.',
     content: (
-      <div className="mx-auh-12to grid items-center justify-start gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         <FeatureSectionLink linkPreview={LINK_PJE_CALC_WINDOWS_PREVIEW}>
           pJe-Calc Cidadão x64
         </FeatureSectionLink>
@@ -137,18 +137,18 @@ const items = [
           para configurar o seu computador de forma rápida e segura através do
           AnyDesk, garantindo agilidade no seu atendimento.
         </span>
-        <AccordionContent className="mx-auto grid items-center justify-start gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <AccordionContent className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           <Button
-            className="flex items-center justify-center gap-1.5 bg-green-600 font-medium shadow shadow-green-600 transition-colors hover:bg-green-700"
+            className="flex items-center justify-center  bg-green-600 font-medium transition-colors hover:bg-green-700"
             asChild
           >
             <a
               href={LINK_CONTACT_WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center text-background"
+              className="flex items-center gap-1 text-background font-semibold"
             >
-              <WhatsApp className="mr-1 h-[22px] w-[22px]" />
+              <WhatsApp className="h-[22px] w-[22px]" />
               Solicitar suporte
             </a>
           </Button>
@@ -170,7 +170,7 @@ export function FeatureSection() {
       <motion.div
         className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center max-md:mt-10"
         initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9 }}
       >
         <h2 className="font-calSans text-[28px] md:text-4xl lg:text-6xl">
@@ -199,7 +199,7 @@ export function FeatureSection() {
                 <AccordionTrigger className="font-bold">
                   {item.trigger}
                 </AccordionTrigger>
-                <AccordionContent className="text-left">
+                <AccordionContent className="text-justify">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>

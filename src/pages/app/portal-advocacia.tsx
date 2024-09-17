@@ -23,7 +23,7 @@ export function PortalAdvocacia() {
         </h1>
         <TextGenerateEffect
           duration={0}
-          filter
+          filter={false}
           className="text-center text-[13px] font-light leading-snug md:w-[40rem] lg:w-[50rem] lg:text-base"
           words="Explore esse mais novo portal, lá você pode acessar suas informações, efetuar pagamentos, atualizar seus dados e gerenciar tudo o que precisa para o exercício da sua profissão de forma prática e segura."
         />

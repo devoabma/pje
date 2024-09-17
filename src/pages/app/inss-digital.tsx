@@ -23,7 +23,7 @@ export function InssDigital() {
         </h1>
         <TextGenerateEffect
           duration={0}
-          filter
+          filter={false}
           className="text-center text-[13px] font-light leading-snug md:w-[40rem] lg:w-[50rem] lg:text-base"
           words="Sistema de Gerenciamento de Identidade e Acesso, usado para controle de acesso e permissões aos sistemas disponibilizados aos usuários internos e externos à Secretaria de Previdência."
         />

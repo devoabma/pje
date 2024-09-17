@@ -11,10 +11,10 @@ export function AppLayout() {
   const { day, fullMonth, year } = getCurrentDateInfo()
 
   return (
-    <div className="flex min-h-screen flex-col antialiased">
+    <div className="flex flex-wrap min-h-screen flex-col antialiased">
       <Header />
 
-      <div className="container flex flex-1 flex-col gap-4 p-8 pt-6">
+      <div className="container flex flex-1 flex-col gap-4 pt-6">
         <p className="flex items-center justify-end gap-1 text-[13px] italic text-muted-foreground">
           <Clock className="h-4 w-4" />
           Hoje, {day} de {fullMonth} de {year}

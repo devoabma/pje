@@ -23,7 +23,7 @@ export function ZoneCriminal() {
         </h1>
         <TextGenerateEffect
           duration={0}
-          filter
+          filter={false}
           className="text-center text-[13px] font-light leading-snug md:w-[40rem] lg:w-[50rem] lg:text-base"
           words="Explore os sistemas de gestão de processos criminais: SEEU e SIISP. Com essas ferramentas, você garante mais eficiência, transparência e controle no acompanhamento de processos judiciais, contribuindo para uma justiça mais rápida e acessível."
         />

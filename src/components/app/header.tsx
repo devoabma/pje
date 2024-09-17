@@ -12,8 +12,10 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
 
-import LogoWhite from '../../assets/logo-oabma-white.png'
+import { env } from '@/env'
+
 import LogoDark from '../../assets/logo-oabma-dark.png'
+import LogoWhite from '../../assets/logo-oabma-white.png'
 import { useTheme } from '../theme/theme-provider'
 import { ModeToggle } from '../theme/theme-toggle'
 import { Button } from '../ui/button'
@@ -21,7 +23,6 @@ import { DropdownMenu, DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { Separator } from '../ui/separator'
 import { HeaderMenu } from './header-menu'
 import { HeaderNavLink } from './header-nav-link'
-import { env } from '@/env'
 
 export function Header() {
   const [openDropdown, setOpenDropdown] = useState(false)
@@ -46,7 +47,7 @@ export function Header() {
             {theme === 'light' ? (
               <img src={LogoDark} className="h-12 mr-2" alt="OAB Maranhão" />
             ) : (
-              <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
+              <img src={LogoWhite} className="h-12 mr-2" alt="OAB Maranhão" />
             )}
           </div>
         </Link>

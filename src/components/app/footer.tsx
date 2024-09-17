@@ -20,8 +20,8 @@ export function Footer() {
   const { theme } = useTheme()
 
   return (
-    <div className="mt-28 flex flex-col items-center justify-center border-t">
-      <div className="container flex h-48 items-center justify-between gap-2">
+    <div className="mt-28 overflow-x-hidden flex flex-col items-center justify-center border-t">
+      <div className="container overflow-hidden flex h-48 items-center justify-between gap-2">
         <motion.div
           className="space-y-4"
           initial={{ opacity: 0, x: -100 }}

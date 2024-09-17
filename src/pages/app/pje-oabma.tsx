@@ -21,7 +21,7 @@ export function PjeOabma() {
         </h1>
         <TextGenerateEffect
           duration={0}
-          filter
+          filter={false}
           className="text-center text-[13px] font-light leading-snug md:w-[40rem] lg:w-[50rem] lg:text-base"
           words="Sistema que permite a tramitação de processos judiciais de forma totalmente digital, eliminando o uso de papel e agilizando o andamento das ações na justiça."
         />
@@ -38,11 +38,11 @@ export function PjeOabma() {
       >
         Escolha qual{' '}
         <span className="font-calSans font-medium tracking-wide text-foreground">
-          estado
+          &nbsp;Estado
         </span>{' '}
         e{' '}
         <span className="font-calSans font-medium tracking-wider text-foreground">
-          tribunal
+          Tribunal&nbsp;
         </span>{' '}
         você deseja acessar
       </motion.h3>
