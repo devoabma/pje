@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from 'react-router-dom'
 import { Toaster } from 'sonner'
@@ -18,6 +19,7 @@ export function App() {
       <Toaster richColors closeButton theme={theme} />
 
       <Analytics />
+      <SpeedInsights />
     </HelmetProvider>
   )
 }
