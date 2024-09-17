@@ -10,7 +10,7 @@ export function PjeOabma() {
       <Helmet title="pJe" />
 
       <motion.div
-        className="relative flex flex-col items-center gap-2"
+        className="relative mb-5 flex flex-col items-center gap-2"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}

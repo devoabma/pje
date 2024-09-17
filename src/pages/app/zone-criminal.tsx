@@ -17,7 +17,7 @@ export function ZoneCriminal() {
     >
       <Helmet title="Zona Criminal" />
 
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex mb-5 flex-col items-center gap-2">
         <h1 className="font-calSans text-[28px] md:text-4xl lg:text-6xl">
           Zona de Sistemas <span className="text-primary">Criminais</span>
         </h1>
