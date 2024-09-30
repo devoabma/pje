@@ -92,7 +92,7 @@ export function Header() {
             </HeaderNavLink>
             <HeaderNavLink to="/zone-criminal">
               <Gavel className="h-5 w-5" />
-              Zona Criminal
+              Área Criminal
             </HeaderNavLink>
             <HeaderNavLink to="/portal-advocacia">
               <MonitorCheck className="h-4 w-4" />

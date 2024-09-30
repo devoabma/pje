@@ -2,18 +2,30 @@ import { WhatsApp } from '@mui/icons-material'
 import { motion } from 'framer-motion'
 
 import {
+  LINK_ANYDESK_MACOS,
   LINK_ANYDESK_MACOS_PREVIEW,
+  LINK_ANYDESK_WINDOWS,
   LINK_ANYDESK_WINDOWS_PREVIEW,
+  LINK_CERTISIGN_MACOS,
   LINK_CERTISIGN_MACOS_PREVIEW,
+  LINK_CERTISIGN_WINDOWS,
   LINK_CERTISIGN_WINDOWS_PREVIEW,
   LINK_CONTACT_WHATSAPP,
+  LINK_JAVA_MACOS,
   LINK_JAVA_MACOS_PREVIEW,
+  LINK_JAVA_WINDOWS,
   LINK_JAVA_WINDOWS_PREVIEW,
+  LINK_PJE_CALC_TAB_WINDOWS,
   LINK_PJE_CALC_TAB_WINDOWS_PREVIEW,
+  LINK_PJE_CALC_WINDOWS,
   LINK_PJE_CALC_WINDOWS_PREVIEW,
+  LINK_PJE_PRO_MACOS,
   LINK_PJE_PRO_MACOS_PREVIEW,
+  LINK_PJE_PRO_WINDOWS,
   LINK_PJE_PRO_WINDOWS_PREVIEW,
+  LINK_SAFESIGN_MACOS,
   LINK_SAFESIGN_MACOS_PREVIEW,
+  LINK_SAFESIGN_WINDOWS,
   LINK_SAFESIGN_WINDOWS_PREVIEW,
 } from '@/utils/links-download-access'
 
@@ -68,19 +80,31 @@ const items = [
       '4. Instalação: Softwares requeridos para o Sistema Operacional Windows.',
     content: (
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <FeatureSectionLink linkPreview={LINK_JAVA_WINDOWS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_JAVA_WINDOWS}
+          linkPreview={LINK_JAVA_WINDOWS_PREVIEW}
+        >
           Java Standard Edition (Java SE)
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_PJE_PRO_WINDOWS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_PJE_PRO_WINDOWS}
+          linkPreview={LINK_PJE_PRO_WINDOWS_PREVIEW}
+        >
           Assinador PJeOffice Pro
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_SAFESIGN_WINDOWS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_SAFESIGN_WINDOWS}
+          linkPreview={LINK_SAFESIGN_WINDOWS_PREVIEW}
+        >
           Driver Token GD-Safesign x64
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_CERTISIGN_WINDOWS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_CERTISIGN_WINDOWS}
+          linkPreview={LINK_CERTISIGN_WINDOWS_PREVIEW}
+        >
           Driver Token SafeNet x64
         </FeatureSectionLink>
       </div>
@@ -92,19 +116,31 @@ const items = [
       '5. Instalação: Softwares requeridos para o Sistema Operacional MacOS.',
     content: (
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <FeatureSectionLink linkPreview={LINK_JAVA_MACOS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_JAVA_MACOS}
+          linkPreview={LINK_JAVA_MACOS_PREVIEW}
+        >
           Java Standard Edition (Java SE)
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_PJE_PRO_MACOS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_PJE_PRO_MACOS}
+          linkPreview={LINK_PJE_PRO_MACOS_PREVIEW}
+        >
           Assinador PJeOffice Pro
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_SAFESIGN_MACOS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_SAFESIGN_MACOS}
+          linkPreview={LINK_SAFESIGN_MACOS_PREVIEW}
+        >
           Driver Token GD-Safesign
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_CERTISIGN_MACOS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_CERTISIGN_MACOS}
+          linkPreview={LINK_CERTISIGN_MACOS_PREVIEW}
+        >
           Driver Token SafeNet
         </FeatureSectionLink>
       </div>
@@ -116,11 +152,17 @@ const items = [
       '6. Instalação: Software pJe-Calc para o Sistema Operacional Windows.',
     content: (
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <FeatureSectionLink linkPreview={LINK_PJE_CALC_WINDOWS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_PJE_CALC_WINDOWS}
+          linkPreview={LINK_PJE_CALC_WINDOWS_PREVIEW}
+        >
           pJe-Calc Cidadão x64
         </FeatureSectionLink>
 
-        <FeatureSectionLink linkPreview={LINK_PJE_CALC_TAB_WINDOWS_PREVIEW}>
+        <FeatureSectionLink
+          url={LINK_PJE_CALC_TAB_WINDOWS}
+          linkPreview={LINK_PJE_CALC_TAB_WINDOWS_PREVIEW}
+        >
           Tabelas Auxiliares
         </FeatureSectionLink>
       </div>
@@ -152,10 +194,16 @@ const items = [
               Solicitar suporte
             </a>
           </Button>
-          <FeatureSectionLink linkPreview={LINK_ANYDESK_WINDOWS_PREVIEW}>
+          <FeatureSectionLink
+            url={LINK_ANYDESK_WINDOWS}
+            linkPreview={LINK_ANYDESK_WINDOWS_PREVIEW}
+          >
             Anydesk para Windows
           </FeatureSectionLink>
-          <FeatureSectionLink linkPreview={LINK_ANYDESK_MACOS_PREVIEW}>
+          <FeatureSectionLink
+            url={LINK_ANYDESK_MACOS}
+            linkPreview={LINK_ANYDESK_MACOS_PREVIEW}
+          >
             Anydesk para MacOS
           </FeatureSectionLink>
         </AccordionContent>

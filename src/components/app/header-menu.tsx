@@ -2,12 +2,13 @@ import { Gavel, MonitorCheck, Scale, Share2, UsersRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
 
+import { env } from '@/env'
+
 import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '../ui/dropdown-menu'
-import { env } from '@/env'
 
 interface HeaderMenuProps {
   openDropdown: boolean
@@ -41,7 +42,7 @@ export function HeaderMenu({ openDropdown }: HeaderMenuProps) {
           <Link to="/zone-criminal">
             <DropdownMenuItem className="font-medium">
               <Gavel className="mr-2 h-4 w-4" />
-              Zona Criminal
+              Área Criminal
             </DropdownMenuItem>
           </Link>
 

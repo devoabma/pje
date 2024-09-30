@@ -15,11 +15,11 @@ export function ZoneCriminal() {
       exit={{ opacity: 0, x: 100 }}
       transition={{ duration: 0.9 }}
     >
-      <Helmet title="Zona Criminal" />
+      <Helmet title="Área Criminal" />
 
       <div className="flex mb-5 flex-col items-center gap-2">
         <h1 className="font-calSans text-[28px] md:text-4xl lg:text-6xl">
-          Zona de Sistemas <span className="text-primary">Criminais</span>
+          Área dos Sistemas <span className="text-primary">Criminais</span>
         </h1>
         <TextGenerateEffect
           duration={0}
