@@ -12,7 +12,7 @@ export function App() {
 
   return (
     <HelmetProvider>
-      <Helmet titleTemplate="%s | OAB">
+      <Helmet titleTemplate="%s OAB">
         <link rel="canonical" href="https://pje.oabma.org.br" />
       </Helmet>
       <RouterProvider router={router} />
