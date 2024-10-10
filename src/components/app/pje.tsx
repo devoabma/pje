@@ -43,21 +43,25 @@ export function PJE() {
     setValue('stateID', selectedStateID)
   }
 
-  function handleAccessCourt(event: React.MouseEvent<HTMLAnchorElement>) {
+  function handleAccessCourt(event: React.MouseEvent<HTMLButtonElement>) {
     if (!stateID || !courtURL) {
       event.preventDefault() // Impede a navegação se os selects não estiverem preenchidos.
 
       toast.error('Ops! Ação não permitida.', {
         description: 'Por favor, selecione um estado e tribunal.',
       })
+      return
     }
+
+    // Navegação segura para o tribunal selecionado
+    window.open(courtURL, '_blank', 'noopener,noreferrer')
   }
 
   return (
     <motion.div
       className="relative flex flex-col items-center gap-6"
       initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 100 }}
       transition={{ duration: 0.9 }}
     >
@@ -77,15 +81,13 @@ export function PJE() {
                 <SelectValue placeholder="Selecione um estado" />
               </SelectTrigger>
               <SelectContent>
-                {sortStatesAlphabetically(dataStates).map((states) => {
-                  return (
-                    <SelectGroup key={states.id}>
-                      <SelectItem value={states.id} className="font-medium">
-                        {states.name}
-                      </SelectItem>
-                    </SelectGroup>
-                  )
-                })}
+                {sortStatesAlphabetically(dataStates).map((state) => (
+                  <SelectGroup key={state.id}>
+                    <SelectItem value={state.id} className="font-medium">
+                      {state.name}
+                    </SelectItem>
+                  </SelectGroup>
+                ))}
               </SelectContent>
             </Select>
           )}
@@ -113,18 +115,15 @@ export function PJE() {
         />
       </div>
 
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex w-full"
+      <Button
+        type="button"
+        className="inline-flex w-full py-[18px] font-bold"
         onClick={handleAccessCourt}
-        href={courtURL}
+        // disabled={!stateID || !courtURL}
       >
-        <Button type="button" className="w-full py-[18px] font-bold">
-          Ir para tribunal
-          <ExternalLink className="ml-2 h-5 w-5" />
-        </Button>
-      </a>
+        Ir para tribunal
+        <ExternalLink className="ml-2 h-5 w-5" />
+      </Button>
     </motion.div>
   )
 }
