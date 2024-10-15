@@ -227,7 +227,7 @@ export function FeatureSection() {
         <TextGenerateEffect
           duration={0}
           filter
-          className="text-xs font-medium text-muted-foreground lg:text-base"
+          className="text-xs font-medium text-muted-foreground lg:text-base px-1 md:px-0"
           words="Nessa seção, você poderá esclarecer todas as suas dúvidas e como essa plataforma pode te ajudar."
         />
       </motion.div>

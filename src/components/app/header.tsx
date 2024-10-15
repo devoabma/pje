@@ -46,8 +46,13 @@ export function Header() {
           <div className="flex items-center justify-center">
             {theme === 'light' ? (
               <img src={LogoDark} className="h-12 mr-2" alt="OAB Maranhão" />
-            ) : (
+            ) : theme === 'dark' ? (
               <img src={LogoWhite} className="h-12 mr-2" alt="OAB Maranhão" />
+            ) : theme === 'system' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches ? (
+              <img src={LogoWhite} className="h-12 mr-2" alt="OAB Maranhão" />
+            ) : (
+              <img src={LogoDark} className="h-12 mr-2" alt="OAB Maranhão" />
             )}
           </div>
         </Link>
