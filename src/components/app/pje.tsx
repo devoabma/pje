@@ -1,17 +1,9 @@
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { ChevronsUpDown, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { type Courts, dataStates } from '@/utils/data-states'
 import { sortStatesAlphabetically } from '@/utils/sort-states-alphabetically'
 
@@ -70,26 +62,32 @@ export function PJE() {
           name="stateID"
           control={control}
           render={({ field: { onChange, value } }) => (
-            <Select
-              onValueChange={(state) => {
-                onChange(state)
-                handleStateChange(state)
-              }}
-              value={value}
-            >
-              <SelectTrigger className="w-[20.62rem] lg:w-[17.5rem]">
-                <SelectValue placeholder="Selecione um estado" />
-              </SelectTrigger>
-              <SelectContent>
+            <div className="relative w-[20.62rem] lg:w-[17.5rem]">
+              <select
+                className="appearance-none flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border bg-background text-foreground px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                value={value || ''}
+                onChange={(e) => {
+                  onChange(e.target.value)
+                  handleStateChange(e.target.value)
+                }}
+              >
+                <option value="" disabled>
+                  Selecione um estado
+                </option>
                 {sortStatesAlphabetically(dataStates).map((state) => (
-                  <SelectGroup key={state.id}>
-                    <SelectItem value={state.id} className="font-medium">
-                      {state.name}
-                    </SelectItem>
-                  </SelectGroup>
+                  <option
+                    key={state.sigla}
+                    value={state.id}
+                    className="font-medium"
+                  >
+                    {state.name}
+                  </option>
                 ))}
-              </SelectContent>
-            </Select>
+              </select>
+              <span className="absolute right-3 top-2.5 pointer-events-none">
+                <ChevronsUpDown className="h-3 w-3 opacity-50" />
+              </span>
+            </div>
           )}
         />
 
@@ -97,20 +95,31 @@ export function PJE() {
           name="courtURL"
           control={control}
           render={({ field: { onChange, value } }) => (
-            <Select onValueChange={onChange} value={value} disabled={!stateID}>
-              <SelectTrigger className="w-[20.62rem] lg:w-[17.5rem]">
-                <SelectValue placeholder="Selecione um tribunal" />
-              </SelectTrigger>
-              <SelectContent>
+            <div className="relative w-[20.62rem] lg:w-[17.5rem]">
+              <select
+                className="appearance-none flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border bg-background text-foreground px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                value={value || ''}
+                onChange={(e) => {
+                  onChange(e.target.value)
+                }}
+              >
+                <option value="" disabled>
+                  Selecione um tribunal
+                </option>
                 {courts.map((court) => (
-                  <SelectGroup key={court.url}>
-                    <SelectItem value={court.url} className="font-medium">
-                      {court.name}
-                    </SelectItem>
-                  </SelectGroup>
+                  <option
+                    key={court.id}
+                    value={court.url}
+                    className="font-medium"
+                  >
+                    {court.name}
+                  </option>
                 ))}
-              </SelectContent>
-            </Select>
+              </select>
+              <span className="absolute right-3 top-2.5 pointer-events-none">
+                <ChevronsUpDown className="h-3 w-3 opacity-50" />
+              </span>
+            </div>
           )}
         />
       </div>
