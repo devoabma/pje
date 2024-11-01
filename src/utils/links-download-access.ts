@@ -1,6 +1,6 @@
 /** LINKS PARA PROGRAMAS SISTEMA OPERACIONAL WINDOWS */
 export const LINK_JAVA_WINDOWS =
-  'https://javadl.oracle.com/webapps/download/AutoDL?BundleId=250129_d8aa705069af427f9b83e66b34f5e380'
+  'https://javadl.oracle.com/webapps/download/AutoDL?BundleId=251391_0d8f12bc927a4e2c9f8568ca567db4ee'
 
 export const LINK_JAVA_WINDOWS_PREVIEW =
   'https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR'
@@ -40,6 +40,12 @@ export const LINK_ANYDESK_WINDOWS =
 
 export const LINK_ANYDESK_WINDOWS_PREVIEW =
   'https://anydesk.com/pt/downloads/windows'
+
+export const LINK_PJE_PORTABLE =
+  'https://www.trt4.jus.br/portais/media/782592/PjePortable-1.13.10.exe'
+
+export const LINK_PJE_PORTABLE_PREVIEW =
+  'https://www.trt16.jus.br/pje/suporte-ao-pje'
 
 /** ---------------------------------------------------------------------------------------------------------------- */
 
@@ -83,7 +89,7 @@ export const SITE_OABMA = 'https://www.oabma.org.br'
 
 export const LINK_SIISP = 'https://siisp.ma.gov.br/SIISP/login'
 
-export const LINK_GERID = 'https://atendimento.inss.gov.br/'
+export const LINK_GERID = 'https://novorequerimento.inss.gov.br/'
 
 export const LINK_REGISTER_GERID = 'https://forms.gle/TuJvWHSdYQejTmmt6'
 

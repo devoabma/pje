@@ -19,6 +19,8 @@ import {
   LINK_PJE_CALC_TAB_WINDOWS_PREVIEW,
   LINK_PJE_CALC_WINDOWS,
   LINK_PJE_CALC_WINDOWS_PREVIEW,
+  LINK_PJE_PORTABLE,
+  LINK_PJE_PORTABLE_PREVIEW,
   LINK_PJE_PRO_MACOS,
   LINK_PJE_PRO_MACOS_PREVIEW,
   LINK_PJE_PRO_WINDOWS,
@@ -106,6 +108,13 @@ const items = [
           linkPreview={LINK_CERTISIGN_WINDOWS_PREVIEW}
         >
           Driver Token SafeNet x64
+        </FeatureSectionLink>
+
+        <FeatureSectionLink
+          url={LINK_PJE_PORTABLE}
+          linkPreview={LINK_PJE_PORTABLE_PREVIEW}
+        >
+          PJe Portable 1.13.10 com Shodo
         </FeatureSectionLink>
       </div>
     ),
