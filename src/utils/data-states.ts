@@ -669,17 +669,17 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'TJPE - CORREGEDORIA',
-        url: 'https://pje.tjpe.jus.br/cgj/login.seam',
+        url: 'https://corregedoria.pje.jus.br/login.seam',
       },
       {
         id: uuidV4(),
         name: 'TJPE 1° GRAU',
-        url: 'https://pje.tjpe.jus.br/2g/login.seam',
+        url: 'https://pje.cloud.tjpe.jus.br/1g/login.seam',
       },
       {
         id: uuidV4(),
         name: 'TJPE 2° GRAU',
-        url: 'https://pje.tjpe.jus.br/cgj/login.seam',
+        url: 'https://pje.cloud.tjpe.jus.br/2g/login.seam',
       },
       {
         id: uuidV4(),
