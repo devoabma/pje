@@ -22,7 +22,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -64,7 +64,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -96,7 +96,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -138,7 +138,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -170,7 +170,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -222,7 +222,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -264,7 +264,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -306,7 +306,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -363,7 +363,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -410,7 +410,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -442,7 +442,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -484,7 +484,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -526,7 +526,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -568,7 +568,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -615,7 +615,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -647,7 +647,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -684,7 +684,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -736,7 +736,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -773,7 +773,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -805,7 +805,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -847,7 +847,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -879,7 +879,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -911,7 +911,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -943,7 +943,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -975,7 +975,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -1022,7 +1022,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
@@ -1054,7 +1054,7 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'Justiça Eleitoral',
-        url: 'https://www.tse.jus.br/servicos-judiciais/processos/processo-judicial-eletronico/processo-judicial-eletronico-1',
+        url: 'https://www.tse.jus.br/servicos-judiciais/processos/pje',
       },
       {
         id: uuidV4(),
