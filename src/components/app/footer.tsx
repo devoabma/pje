@@ -30,13 +30,16 @@ export function Footer() {
           transition={{ duration: 0.9 }}
         >
           <Link to="/">
-            <div className="flex items-center justify-center">
-              {theme === 'light' ? (
-                <img src={LogoDark} className="h-12" alt="OAB Maranhão" />
-              ) : (
-                <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
-              )}
-            </div>
+            {theme === 'light' ? (
+              <img src={LogoDark} className="h-12" alt="OAB Maranhão" />
+            ) : theme === 'dark' ? (
+              <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
+            ) : theme === 'system' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches ? (
+              <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
+            ) : (
+              <img src={LogoDark} className="h-12" alt="OAB Maranhão" />
+            )}
           </Link>
 
           <div className="flex items-center justify-center gap-2.5">
