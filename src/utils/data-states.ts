@@ -751,12 +751,12 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'TRT 22 - 1º GRAU',
-        url: 'https://pje.trt22.jus.br/primeiroGRAU/login.seam',
+        url: 'https://pje.trt22.jus.br/primeirograu/login.seam',
       },
       {
         id: uuidV4(),
         name: 'TRT 22 - 2º GRAU',
-        url: 'https://pje.trt22.jus.br/segundoGRAU/login.seam',
+        url: 'https://pje.trt22.jus.br/segundograu/login.seam',
       },
     ],
   },
