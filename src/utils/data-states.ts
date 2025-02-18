@@ -47,12 +47,12 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'TRT 16 - 1º GRAU',
-        url: 'https://pje.trt16.jus.br/primeirograu/login.seam',
+        url: 'https://pje.trt16.jus.br/primeirograu/authenticateSSO.seam',
       },
       {
         id: uuidV4(),
         name: 'TRT 16 - 2º GRAU',
-        url: 'https://pje.trt16.jus.br/segundograu/login.seam',
+        url: 'https://pje.trt16.jus.br/segundograu/authenticateSSO.seam',
       },
     ],
   },
