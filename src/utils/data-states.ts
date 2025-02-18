@@ -583,12 +583,12 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'TRT 8 - 1º GRAU',
-        url: 'https://pje.trt8.jus.br/primeiroGRAU/login.seam',
+        url: 'https://pje.trt8.jus.br/primeirograu/authenticateSSO.seam',
       },
       {
         id: uuidV4(),
         name: 'TRT 8 - 2º GRAU',
-        url: 'https://pje.trt8.jus.br/segundoGRAU/login.seam',
+        url: 'https://pje.trt8.jus.br/segundograu/authenticateSSO.seam',
       },
     ],
   },
