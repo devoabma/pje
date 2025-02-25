@@ -89,7 +89,7 @@ export const SITE_OABMA = 'https://www.oabma.org.br'
 
 export const LINK_SIISP = 'https://siisp.ma.gov.br/SIISP/login'
 
-export const LINK_GERID = 'https://novorequerimento.inss.gov.br/'
+export const LINK_GERID = 'https://atendimento.inss.gov.br/'
 
 export const LINK_REGISTER_GERID = 'https://forms.gle/TuJvWHSdYQejTmmt6'
 
