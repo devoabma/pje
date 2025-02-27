@@ -1,4 +1,11 @@
-import { Gavel, MonitorCheck, Scale, Share2, UsersRound } from 'lucide-react'
+import {
+  Activity,
+  Gavel,
+  MonitorCheck,
+  Scale,
+  Share2,
+  UsersRound,
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
 
@@ -52,6 +59,15 @@ export function HeaderMenu({ openDropdown }: HeaderMenuProps) {
             <DropdownMenuItem className="font-medium">
               <MonitorCheck className="mr-2 h-4 w-4" />
               Portal Advocacia
+            </DropdownMenuItem>
+          </Link>
+
+          <DropdownMenuSeparator />
+
+          <Link to="/status-services">
+            <DropdownMenuItem className="font-medium">
+              <Activity className="mr-2 h-4 w-4 text-green-500 animate-pulse" />
+              Status Serviços
             </DropdownMenuItem>
           </Link>
 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import {
+  Activity,
   AlignJustify,
   Gavel,
   MonitorCheck,
@@ -18,6 +19,7 @@ import LogoDark from '../../assets/logo-oabma-dark.png'
 import LogoWhite from '../../assets/logo-oabma-white.png'
 import { useTheme } from '../theme/theme-provider'
 import { ModeToggle } from '../theme/theme-toggle'
+import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import { DropdownMenu, DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { Separator } from '../ui/separator'
@@ -102,6 +104,19 @@ export function Header() {
             <HeaderNavLink to="/portal-advocacia">
               <MonitorCheck className="h-4 w-4" />
               Portal Advocacia
+            </HeaderNavLink>
+            <HeaderNavLink
+              to="/status-services"
+              className="flex items-center text-sm transition-colors hover:font-semibold relative group"
+            >
+              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 opacity-70 blur-sm group-hover:opacity-100 transition duration-200" />
+              <div className="relative flex items-center bg-background px-3 py-1.5 rounded-md border">
+                <Activity className="mr-1.5 h-4 w-4 text-green-500 animate-pulse" />
+                Status dos Serviços
+                <Badge className="ml-2 bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-800 dark:text-white dark:hover:bg-green-700 absolute -top-2 -right-9 border-green-300">
+                  Novo
+                </Badge>
+              </div>
             </HeaderNavLink>
           </nav>
 

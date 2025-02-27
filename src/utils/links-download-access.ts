@@ -1,6 +1,6 @@
 /** LINKS PARA PROGRAMAS SISTEMA OPERACIONAL WINDOWS */
 export const LINK_JAVA_WINDOWS =
-  'https://javadl.oracle.com/webapps/download/AutoDL?BundleId=251391_0d8f12bc927a4e2c9f8568ca567db4ee'
+  'https://javadl.oracle.com/webapps/download/AutoDL?BundleId=251639_7ed26d28139143f38c58992680c214a5'
 
 export const LINK_JAVA_WINDOWS_PREVIEW =
   'https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR'
@@ -97,6 +97,8 @@ export const LINK_RESET_PASSWORD_GERID =
   'https://acesso.dataprev.gov.br/clientes/?action=form-sendToken'
 
 export const LINK_PORTAL_ADV = 'https://portaladvocacia.oab.org.br/'
+
+export const LINK_STATUS_SERVICES = 'https://status.tjma.jus.br/'
 /** ------------------------------------------------------------------------ */
 
 export const LINK_CONTACT_WHATSAPP =

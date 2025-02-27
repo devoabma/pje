@@ -88,4 +88,15 @@
 *::-webkit-scrollbar-thumb {
   background-color: #101f38;
   border-radius: 14px;
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 } 

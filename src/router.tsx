@@ -4,6 +4,7 @@ import { AppLayout } from './pages/_layout/app-layout'
 import { InssDigital } from './pages/app/inss-digital'
 import { PjeOabma } from './pages/app/pje-oabma'
 import { PortalAdvocacia } from './pages/app/portal-advocacia'
+import { StatusServices } from './pages/app/status-services'
 import { ZoneCriminal } from './pages/app/zone-criminal'
 
 export const router = createBrowserRouter([
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { path: '/inss-digital', element: <InssDigital /> },
       { path: '/zone-criminal', element: <ZoneCriminal /> },
       { path: '/portal-advocacia', element: <PortalAdvocacia /> },
+      { path: '/status-services', element: <StatusServices /> },
     ],
   },
 ])
