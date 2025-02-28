@@ -1,6 +1,6 @@
 import { Facebook, Instagram, X, YouTube } from '@mui/icons-material'
 import { motion } from 'framer-motion'
-import { Gavel, MonitorCheck, Scale, UsersRound } from 'lucide-react'
+import { Activity, Gavel, MonitorCheck, Scale, UsersRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import {
@@ -68,6 +68,9 @@ export function Footer() {
           </FooterLinkMenu>
           <FooterLinkMenu link="/portal-advocacia" icon={MonitorCheck}>
             Portal Advocacia
+          </FooterLinkMenu>
+          <FooterLinkMenu link="/status-services" icon={Activity}>
+            Status Serviços
           </FooterLinkMenu>
         </motion.ul>
       </div>
