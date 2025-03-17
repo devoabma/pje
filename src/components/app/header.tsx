@@ -109,7 +109,6 @@ export function Header() {
               to="/status-services"
               className="flex items-center text-sm transition-colors hover:font-semibold relative group"
             >
-              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 opacity-70 blur-sm group-hover:opacity-100 transition duration-200" />
               <div className="relative flex items-center bg-background px-3 py-1.5 rounded-md border">
                 <Activity className="mr-1.5 h-4 w-4 text-green-500 animate-pulse" />
                 Status dos Serviços
