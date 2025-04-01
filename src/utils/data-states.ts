@@ -467,12 +467,12 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'TRT 23 - 1º GRAU',
-        url: 'https://pje.trt23.jus.br/primeiroGRAU/login.seam',
+        url: 'https://pje.trt23.jus.br/primeirograu/authenticateSSO.seam',
       },
       {
         id: uuidV4(),
         name: 'TRT 23 - 2º GRAU',
-        url: 'https://pje.trt23.jus.br/segundoGRAU/login.seam',
+        url: 'https://pje.trt23.jus.br/segundograu/authenticateSSO.seam',
       },
     ],
   },
@@ -499,12 +499,12 @@ export const dataStates: States[] = [
       {
         id: uuidV4(),
         name: 'TRT 24 - 1º GRAU',
-        url: 'https://pje.trt24.jus.br/primeiroGRAU/login.seam',
+        url: 'https://pje.trt24.jus.br/primeirograu/authenticateSSO.seam',
       },
       {
         id: uuidV4(),
         name: 'TRT 24 - 2º GRAU',
-        url: 'https://pje.trt24.jus.br/segundoGRAU/login.seam',
+        url: 'https://pje.trt24.jus.br/segundograu/authenticateSSO.seam',
       },
     ],
   },
