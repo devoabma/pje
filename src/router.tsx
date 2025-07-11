@@ -6,6 +6,7 @@ import { PjeOabma } from './pages/app/pje-oabma'
 import { PortalAdvocacia } from './pages/app/portal-advocacia'
 import { StatusServices } from './pages/app/status-services'
 import { ZoneCriminal } from './pages/app/zone-criminal'
+import { NotFound } from './pages/not-found'
 
 export const router = createBrowserRouter([
   {
@@ -18,5 +19,9 @@ export const router = createBrowserRouter([
       { path: '/portal-advocacia', element: <PortalAdvocacia /> },
       { path: '/status-services', element: <StatusServices /> },
     ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ])
