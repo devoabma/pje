@@ -91,7 +91,7 @@ export const LINK_SIISP = 'https://siisp.ma.gov.br/SIISP/login'
 
 export const LINK_GERID = 'https://atendimento.inss.gov.br/'
 
-export const LINK_REGISTER_GERID = 'https://forms.gle/TuJvWHSdYQejTmmt6'
+export const LINK_REGISTER_GERID = 'https://tally.so/r/npqRyP'
 
 export const LINK_RESET_PASSWORD_GERID =
   'https://acesso.dataprev.gov.br/clientes/?action=form-sendToken'
