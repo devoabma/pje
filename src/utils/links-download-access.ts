@@ -1,6 +1,6 @@
 /** LINKS PARA PROGRAMAS SISTEMA OPERACIONAL WINDOWS */
 export const LINK_JAVA_WINDOWS =
-  'https://javadl.oracle.com/webapps/download/AutoDL?xd_co_f=YzIxZjliMTgtZmExMy00NGEyLWEyNjYtNzE1MzRkNDJlMGNk&BundleId=252322_68ce765258164726922591683c51982c'
+  'https://javadl.oracle.com/webapps/download/AutoDL?BundleId=252907_0d06828d282343ea81775b28020a7cd3'
 
 export const LINK_JAVA_WINDOWS_PREVIEW =
   'https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR'

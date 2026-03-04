@@ -1,5 +1,4 @@
 import { Link, type LinkProps, useLocation } from 'react-router-dom'
-
 import { cn } from '@/lib/utils'
 
 export type HeaderNavLinkProps = LinkProps
