@@ -1,11 +1,27 @@
+import { lazy, Suspense } from 'react'
 import { Clock } from 'lucide-react'
 import { Outlet } from 'react-router-dom'
 
-import { BackToTop } from '@/components/app/back-to-top'
-import { FeatureSection } from '@/components/app/feature-section'
-import { Footer } from '@/components/app/footer'
 import { Header } from '@/components/app/header'
 import { getCurrentDateInfo } from '@/utils/get-current-date-info'
+
+const BackToTop = lazy(() =>
+  import('@/components/app/back-to-top').then((module) => ({
+    default: module.BackToTop,
+  })),
+)
+
+const FeatureSection = lazy(() =>
+  import('@/components/app/feature-section').then((module) => ({
+    default: module.FeatureSection,
+  })),
+)
+
+const Footer = lazy(() =>
+  import('@/components/app/footer').then((module) => ({
+    default: module.Footer,
+  })),
+)
 
 export function AppLayout() {
   const { day, fullMonth, year } = getCurrentDateInfo()
@@ -24,12 +40,18 @@ export function AppLayout() {
           <Outlet />
         </div>
 
-        <FeatureSection />
+        <Suspense fallback={null}>
+          <FeatureSection />
+        </Suspense>
       </div>
 
-      <BackToTop />
+      <Suspense fallback={null}>
+        <BackToTop />
+      </Suspense>
 
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   )
 }
