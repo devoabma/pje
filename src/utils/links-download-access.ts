@@ -91,6 +91,8 @@ export const LINK_SIISP = 'https://siisp.ma.gov.br/SIISP/login'
 
 export const LINK_GERID = 'https://atendimento.inss.gov.br/'
 
+export const LINK_SEI = 'https://sei.ma.gov.br'
+
 export const LINK_REGISTER_GERID = 'https://tally.so/r/npqRyP'
 
 export const LINK_RESET_PASSWORD_GERID =

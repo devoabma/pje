@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import {
   Activity,
   AlignJustify,
@@ -11,15 +10,14 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { WhatsappShareButton } from 'react-share'
 
 import { env } from '@/env'
+import { buildWhatsappShareUrl } from '@/utils/whatsapp-share'
 
 import LogoDark from '../../assets/logo-oabma-dark.png'
 import LogoWhite from '../../assets/logo-oabma-white.png'
 import { useTheme } from '../theme/theme-provider'
 import { ModeToggle } from '../theme/theme-toggle'
-import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import { DropdownMenu, DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { Separator } from '../ui/separator'
@@ -37,12 +35,7 @@ export function Header() {
 
   return (
     <div className="flex items-center justify-center border-b">
-      <motion.div
-        className="container relative flex h-16 items-center justify-between gap-2"
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-      >
+      <div className="container relative flex h-16 items-center justify-between gap-2">
         <Link to="/">
           {/* Logo OAB Maranhão */}
           <div className="flex items-center justify-center">
@@ -101,6 +94,10 @@ export function Header() {
               <Gavel className="h-5 w-5" />
               Área Criminal
             </HeaderNavLink>
+            <HeaderNavLink to="/sei">
+              <MonitorCheck className="h-4 w-4" />
+              SEI
+            </HeaderNavLink>
             <HeaderNavLink to="/portal-advocacia">
               <MonitorCheck className="h-4 w-4" />
               Portal Advocacia
@@ -109,13 +106,8 @@ export function Header() {
               to="/status-services"
               className="flex items-center text-sm transition-colors hover:font-semibold relative group"
             >
-              <div className="relative flex items-center bg-background px-3 py-1.5 rounded-md border">
-                <Activity className="mr-1.5 h-4 w-4 text-green-500 animate-pulse" />
-                Status dos Serviços
-                <Badge className="ml-2 bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-800 dark:text-white dark:hover:bg-green-700 absolute -top-2 -right-9 border-green-300">
-                  Novo
-                </Badge>
-              </div>
+              <Activity className=" h-4 w-4 text-green-500 animate-pulse" />
+              Status
             </HeaderNavLink>
           </nav>
 
@@ -125,18 +117,21 @@ export function Header() {
             <Separator orientation="vertical" className="h-6" />
 
             <div className="rounded-md border border-input transition-colors hover:bg-accent hover:text-accent-foreground">
-              <WhatsappShareButton
+              <a
                 className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md !px-4 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                // Definir url de produção para envio via WhatsApp
-                url={env.VITE_MAIN_URL}
+                href={buildWhatsappShareUrl(
+                  `Olá, confira a plataforma pJe OAB: ${env.VITE_MAIN_URL}`,
+                )}
+                target="_blank"
+                rel="noreferrer"
               >
                 <Share2 className="mr-2 h-4 w-4" />
                 Compartilhe
-              </WhatsappShareButton>
+              </a>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
