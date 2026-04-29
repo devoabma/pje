@@ -55,6 +55,15 @@ export function HeaderMenu({ openDropdown }: HeaderMenuProps) {
 
           <DropdownMenuSeparator />
 
+          <Link to="/sei">
+            <DropdownMenuItem className="font-medium">
+              <MonitorCheck className="mr-2 h-4 w-4" />
+              SEI
+            </DropdownMenuItem>
+          </Link>
+
+          <DropdownMenuSeparator />
+
           <Link to="/portal-advocacia">
             <DropdownMenuItem className="font-medium">
               <MonitorCheck className="mr-2 h-4 w-4" />
@@ -67,7 +76,7 @@ export function HeaderMenu({ openDropdown }: HeaderMenuProps) {
           <Link to="/status-services">
             <DropdownMenuItem className="font-medium">
               <Activity className="mr-2 h-4 w-4 text-green-500 animate-pulse" />
-              Status Serviços
+              Status
             </DropdownMenuItem>
           </Link>
 
