@@ -66,11 +66,14 @@ export function Footer() {
           <FooterLinkMenu link="/zone-criminal" icon={Gavel}>
             Zona Criminal
           </FooterLinkMenu>
+          <FooterLinkMenu link="/sei" icon={MonitorCheck}>
+            SEI
+          </FooterLinkMenu>
           <FooterLinkMenu link="/portal-advocacia" icon={MonitorCheck}>
             Portal Advocacia
           </FooterLinkMenu>
           <FooterLinkMenu link="/status-services" icon={Activity}>
-            Status Serviços
+            Status
           </FooterLinkMenu>
         </motion.ul>
       </div>
