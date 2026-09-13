@@ -1,6 +1,8 @@
-import { WhatsApp } from '@mui/icons-material'
+'use client'
+
 import { motion } from 'framer-motion'
 
+import { WhatsappIcon } from '@/components/icons/brands'
 import {
   LINK_ANYDESK_MACOS,
   LINK_ANYDESK_MACOS_PREVIEW,
@@ -31,12 +33,7 @@ import {
   LINK_SAFESIGN_WINDOWS_PREVIEW,
 } from '@/utils/links-download-access'
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '../ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
 import { Button } from '../ui/button'
 import { TextGenerateEffect } from '../ui/text-generate-effect'
 import { FeatureSectionLink } from './feature-section-link'
@@ -47,10 +44,8 @@ const items = [
     trigger: '1. O que é esta plataforma?',
     content: (
       <p>
-        Esta plataforma, desenvolvida pelo setor de <b>Tecnologia da OAB-MA</b>,
-        ajuda advogados(a) a acessarem rapidamente os tribunais com o sistema
-        pJe em todo o Brasil, fornecendo links diretos para os sites dos
-        tribunais.
+        Esta plataforma, desenvolvida pelo setor de <b>Tecnologia da OAB-MA</b>, ajuda advogados(a) a acessarem rapidamente os
+        tribunais com o sistema pJe em todo o Brasil, fornecendo links diretos para os sites dos tribunais.
       </p>
     ),
   },
@@ -59,9 +54,8 @@ const items = [
     trigger: '2. Acesso exclusivo para advogados(a) da OAB-MA?',
     content: (
       <p>
-        A plataforma foi desenvolvida pelo setor de <b>Tecnologia da OAB-MA</b>,
-        mas pode ser utilizada por advogados(a) de todo o Brasil ou fora dele,
-        que necessitem de acesso ao sistema pJe.
+        A plataforma foi desenvolvida pelo setor de <b>Tecnologia da OAB-MA</b>, mas pode ser utilizada por advogados(a) de todo o
+        Brasil ou fora dele, que necessitem de acesso ao sistema pJe.
       </p>
     ),
   },
@@ -70,50 +64,33 @@ const items = [
     trigger: '3. A OAB é responsável pelo sistema pJe?',
     content: (
       <p>
-        Não, nós apenas fornecemos acesso direto aos links dos sites dos
-        tribunais. Não somos responsáveis pelos sistemas dos tribunais que
-        estejam offline ou com problemas de acesso.
+        Não, nós apenas fornecemos acesso direto aos links dos sites dos tribunais. Não somos responsáveis pelos sistemas dos
+        tribunais que estejam offline ou com problemas de acesso.
       </p>
     ),
   },
   {
     id: 'item-4',
-    trigger:
-      '4. Instalação: Softwares requeridos para o Sistema Operacional Windows.',
+    trigger: '4. Instalação: Softwares requeridos para o Sistema Operacional Windows.',
     content: (
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <FeatureSectionLink
-          url={LINK_JAVA_WINDOWS}
-          linkPreview={LINK_JAVA_WINDOWS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_JAVA_WINDOWS} linkPreview={LINK_JAVA_WINDOWS_PREVIEW}>
           Java Standard Edition (Java SE)
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_PJE_PRO_WINDOWS}
-          linkPreview={LINK_PJE_PRO_WINDOWS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_PJE_PRO_WINDOWS} linkPreview={LINK_PJE_PRO_WINDOWS_PREVIEW}>
           Assinador PJeOffice Pro
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_SAFESIGN_WINDOWS}
-          linkPreview={LINK_SAFESIGN_WINDOWS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_SAFESIGN_WINDOWS} linkPreview={LINK_SAFESIGN_WINDOWS_PREVIEW}>
           Driver Token GD-Safesign x64
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_CERTISIGN_WINDOWS}
-          linkPreview={LINK_CERTISIGN_WINDOWS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_CERTISIGN_WINDOWS} linkPreview={LINK_CERTISIGN_WINDOWS_PREVIEW}>
           Driver Token SafeNet x64
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_PJE_PORTABLE}
-          linkPreview={LINK_PJE_PORTABLE_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_PJE_PORTABLE} linkPreview={LINK_PJE_PORTABLE_PREVIEW}>
           PJe Portable 1.13.10 com Shodo
         </FeatureSectionLink>
       </div>
@@ -121,35 +98,22 @@ const items = [
   },
   {
     id: 'item-5',
-    trigger:
-      '5. Instalação: Softwares requeridos para o Sistema Operacional MacOS.',
+    trigger: '5. Instalação: Softwares requeridos para o Sistema Operacional MacOS.',
     content: (
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <FeatureSectionLink
-          url={LINK_JAVA_MACOS}
-          linkPreview={LINK_JAVA_MACOS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_JAVA_MACOS} linkPreview={LINK_JAVA_MACOS_PREVIEW}>
           Java Standard Edition (Java SE)
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_PJE_PRO_MACOS}
-          linkPreview={LINK_PJE_PRO_MACOS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_PJE_PRO_MACOS} linkPreview={LINK_PJE_PRO_MACOS_PREVIEW}>
           Assinador PJeOffice Pro
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_SAFESIGN_MACOS}
-          linkPreview={LINK_SAFESIGN_MACOS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_SAFESIGN_MACOS} linkPreview={LINK_SAFESIGN_MACOS_PREVIEW}>
           Driver Token GD-Safesign
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_CERTISIGN_MACOS}
-          linkPreview={LINK_CERTISIGN_MACOS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_CERTISIGN_MACOS} linkPreview={LINK_CERTISIGN_MACOS_PREVIEW}>
           Driver Token SafeNet
         </FeatureSectionLink>
       </div>
@@ -157,21 +121,14 @@ const items = [
   },
   {
     id: 'item-6',
-    trigger:
-      '6. Instalação: Software pJe-Calc para o Sistema Operacional Windows.',
+    trigger: '6. Instalação: Software pJe-Calc para o Sistema Operacional Windows.',
     content: (
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <FeatureSectionLink
-          url={LINK_PJE_CALC_WINDOWS}
-          linkPreview={LINK_PJE_CALC_WINDOWS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_PJE_CALC_WINDOWS} linkPreview={LINK_PJE_CALC_WINDOWS_PREVIEW}>
           pJe-Calc Cidadão x64
         </FeatureSectionLink>
 
-        <FeatureSectionLink
-          url={LINK_PJE_CALC_TAB_WINDOWS}
-          linkPreview={LINK_PJE_CALC_TAB_WINDOWS_PREVIEW}
-        >
+        <FeatureSectionLink url={LINK_PJE_CALC_TAB_WINDOWS} linkPreview={LINK_PJE_CALC_TAB_WINDOWS_PREVIEW}>
           Tabelas Auxiliares
         </FeatureSectionLink>
       </div>
@@ -179,40 +136,32 @@ const items = [
   },
   {
     id: 'item-7',
-    trigger:
-      '7. Com dificuldade na instalação ou configuração? Solicite acesso remoto.',
+    trigger: '7. Com dificuldade na instalação ou configuração? Solicite acesso remoto.',
     content: (
       <div className="group flex flex-col items-start justify-center space-y-4">
         <span className="group-data-[state=open]:block">
-          Conte com o suporte remoto da equipe de <b>Tecnologia da OAB-MA</b>{' '}
-          para configurar o seu computador de forma rápida e segura através do
-          AnyDesk, garantindo agilidade no seu atendimento.
+          Conte com o suporte remoto da equipe de <b>Tecnologia da OAB-MA</b> para configurar o seu computador de forma rápida e
+          segura através do AnyDesk, garantindo agilidade no seu atendimento.
         </span>
         <AccordionContent className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           <Button
-            className="flex items-center justify-center  bg-green-600 font-medium transition-colors hover:bg-green-700"
+            className="flex items-center justify-center bg-green-600 font-medium transition-colors hover:bg-green-700"
             asChild
           >
             <a
               href={LINK_CONTACT_WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1 text-background font-semibold"
+              className="flex items-center gap-1 font-semibold text-background"
             >
-              <WhatsApp className="h-[22px] w-[22px]" />
+              <WhatsappIcon className="h-[22px] w-[22px]" />
               Solicitar suporte
             </a>
           </Button>
-          <FeatureSectionLink
-            url={LINK_ANYDESK_WINDOWS}
-            linkPreview={LINK_ANYDESK_WINDOWS_PREVIEW}
-          >
+          <FeatureSectionLink url={LINK_ANYDESK_WINDOWS} linkPreview={LINK_ANYDESK_WINDOWS_PREVIEW}>
             Anydesk para Windows
           </FeatureSectionLink>
-          <FeatureSectionLink
-            url={LINK_ANYDESK_MACOS}
-            linkPreview={LINK_ANYDESK_MACOS_PREVIEW}
-          >
+          <FeatureSectionLink url={LINK_ANYDESK_MACOS} linkPreview={LINK_ANYDESK_MACOS_PREVIEW}>
             Anydesk para MacOS
           </FeatureSectionLink>
         </AccordionContent>
@@ -223,25 +172,26 @@ const items = [
 
 export function FeatureSection() {
   return (
-    <section className="mt-5 space-y-8 rounded-sm border bg-muted-foreground/10 dark:bg-muted-foreground/5 md:py-12 lg:py-20">
+    <section
+      id="suporte"
+      className="mt-5 scroll-mt-20 space-y-8 rounded-sm border bg-muted-foreground/10 md:py-12 lg:py-20 dark:bg-muted-foreground/5"
+    >
       <motion.div
-        className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center max-md:mt-10"
+        className="mx-auto flex max-w-232 flex-col items-center space-y-2 text-center max-md:mt-10"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9 }}
       >
-        <h2 className="font-calSans text-[28px] md:text-4xl lg:text-6xl">
-          Suporte ao Advogado(a)
-        </h2>
+        <h2 className="font-calSans text-[28px] md:text-4xl lg:text-6xl">Suporte ao Advogado(a)</h2>
         <TextGenerateEffect
           duration={0}
           filter
-          className="text-xs font-medium text-muted-foreground lg:text-base px-1 md:px-0"
+          className="px-1 font-medium text-muted-foreground text-xs md:px-0 lg:text-base"
           words="Nessa seção, você poderá esclarecer todas as suas dúvidas e como essa plataforma pode te ajudar."
         />
       </motion.div>
 
-      <div className="mx-auto px-3 pb-8 md:max-w-[58rem]">
+      <div className="mx-auto px-3 pb-8 md:max-w-232">
         <Accordion type="single" collapsible className="w-full space-y-4">
           {items.map((item, index) => (
             <motion.div
@@ -253,12 +203,8 @@ export function FeatureSection() {
               viewport={{ once: true }}
             >
               <AccordionItem value={item.id}>
-                <AccordionTrigger className="font-bold">
-                  {item.trigger}
-                </AccordionTrigger>
-                <AccordionContent className="text-justify">
-                  {item.content}
-                </AccordionContent>
+                <AccordionTrigger className="font-bold">{item.trigger}</AccordionTrigger>
+                <AccordionContent className="text-justify">{item.content}</AccordionContent>
               </AccordionItem>
             </motion.div>
           ))}

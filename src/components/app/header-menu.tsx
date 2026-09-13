@@ -1,102 +1,35 @@
-import {
-  Activity,
-  Gavel,
-  MonitorCheck,
-  Scale,
-  Share2,
-  UsersRound,
-} from 'lucide-react'
-import { Link } from 'react-router-dom'
+'use client'
 
-import { env } from '@/env'
-import { buildWhatsappShareUrl } from '@/utils/whatsapp-share'
+import Link from 'next/link'
+import { Fragment } from 'react'
 
-import {
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-} from '../ui/dropdown-menu'
+import { navItems } from '@/components/app/nav-items'
+import { ShareLink } from '@/components/app/share-link'
+import { DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
+import { cn } from '@/lib/utils'
 
-interface HeaderMenuProps {
-  openDropdown: boolean
-}
-export function HeaderMenu({ openDropdown }: HeaderMenuProps) {
+export function HeaderMenu() {
   return (
-    <>
-      {openDropdown && (
-        <DropdownMenuContent
-          align="end"
-          className="z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
-        >
-          <Link to="/">
-            <DropdownMenuItem className="font-medium">
-              <Scale className="mr-2 h-5 w-5" />
-              pJe OAB
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator />
-
-          <Link to="/inss-digital">
-            <DropdownMenuItem className="font-medium">
-              <UsersRound className="mr-2 h-4 w-4" />
-              Inss Digital
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator />
-
-          <Link to="/zone-criminal">
-            <DropdownMenuItem className="font-medium">
-              <Gavel className="mr-2 h-4 w-4" />
-              Área Criminal
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator />
-
-          <Link to="/sei">
-            <DropdownMenuItem className="font-medium">
-              <MonitorCheck className="mr-2 h-4 w-4" />
-              SEI
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator />
-
-          <Link to="/portal-advocacia">
-            <DropdownMenuItem className="font-medium">
-              <MonitorCheck className="mr-2 h-4 w-4" />
-              Portal Advocacia
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator />
-
-          <Link to="/status-services">
-            <DropdownMenuItem className="font-medium">
-              <Activity className="mr-2 h-4 w-4 text-green-500 animate-pulse" />
-              Status
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator />
-
-          <DropdownMenuItem>
-            <a
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm !font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-              href={buildWhatsappShareUrl(
-                `Olá, confira a plataforma pJe OAB: ${env.VITE_MAIN_URL}`,
-              )}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Share2 className="mr-2 h-4 w-4" />
-              Compartilhe
-            </a>
+    <DropdownMenuContent
+      align="end"
+      className="z-50 min-w-32 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+    >
+      {navItems.map(({ href, label, icon: Icon, iconClassName }) => (
+        <Fragment key={href}>
+          <DropdownMenuItem asChild className="font-medium">
+            <Link href={href}>
+              <Icon className={cn('mr-2 h-4 w-4', iconClassName)} />
+              {label}
+            </Link>
           </DropdownMenuItem>
-        </DropdownMenuContent>
-      )}
-    </>
+
+          <DropdownMenuSeparator />
+        </Fragment>
+      ))}
+
+      <DropdownMenuItem asChild>
+        <ShareLink className="transition-colors hover:bg-accent hover:text-accent-foreground" />
+      </DropdownMenuItem>
+    </DropdownMenuContent>
   )
 }

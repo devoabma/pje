@@ -1,13 +1,12 @@
+'use client'
+
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useSpring,
-} from 'framer-motion'
+import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion'
+import Image from 'next/image'
 import { encode } from 'qss'
 import React from 'react'
 
+import { useIsMounted } from '@/hooks/use-is-mounted'
 import { cn } from '@/lib/utils'
 
 type LinkPreviewProps = {
@@ -52,11 +51,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   }
 
   const [isOpen, setOpen] = React.useState(false)
-  const [isMounted, setIsMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  const isMounted = useIsMounted()
 
   const springConfig = { stiffness: 100, damping: 15 }
   const x = useMotionValue(0)
@@ -73,28 +68,17 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
     <>
       {isMounted && src ? (
         <div style={{ display: 'none' }}>
-          <img src={src} width={width} height={height} alt="hidden image" />
+          <Image src={src} width={width} height={height} alt="" unoptimized />
         </div>
       ) : null}
 
-      <HoverCardPrimitive.Root
-        openDelay={50}
-        closeDelay={100}
-        onOpenChange={setOpen}
-      >
-        <HoverCardPrimitive.Trigger
-          onMouseMove={handleMouseMove}
-          className={cn('text-black', className)}
-          {...rest}
-        >
+      <HoverCardPrimitive.Root openDelay={50} closeDelay={100} onOpenChange={setOpen}>
+        <HoverCardPrimitive.Trigger onMouseMove={handleMouseMove} className={cn('text-black', className)} {...rest}>
           {children}
         </HoverCardPrimitive.Trigger>
 
         <HoverCardPrimitive.Content
-          className={cn(
-            '[transform-origin:var(--radix-hover-card-content-transform-origin)]',
-            className,
-          )}
+          className={cn('origin-(--radix-hover-card-content-transform-origin)', className)}
           side="top"
           align="center"
           sideOffset={10}
@@ -123,17 +107,18 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
                   href={url}
                   target="_blank"
                   className={cn(
-                    'block rounded-sm border border-transparent bg-neutral-200 p-0.5 shadow hover:border-neutral-200',
-                    className,
+                    'block rounded-sm border border-transparent bg-neutral-200 p-0.5 shadow-sm hover:border-neutral-200',
+                    className
                   )}
                   style={{ fontSize: 0 }}
                   rel="noreferrer"
                 >
-                  <img
+                  <Image
                     src={src}
                     width={width}
                     height={height}
-                    alt="preview image"
+                    alt={`Pré-visualização de ${url}`}
+                    unoptimized
                     className={cn('rounded-lg', className)}
                   />
                 </a>

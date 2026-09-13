@@ -1,7 +1,12 @@
+'use client'
+
 import { motion, stagger, useAnimate } from 'framer-motion'
 import { useEffect } from 'react'
 
 import { cn } from '@/lib/utils'
+
+/** Tempo máximo que o efeito inteiro pode levar, independente do nº de palavras. */
+const TOTAL_STAGGER_SECONDS = 1.2
 
 export const TextGenerateEffect = ({
   words,
@@ -16,6 +21,8 @@ export const TextGenerateEffect = ({
 }) => {
   const [scope, animate] = useAnimate()
   const wordsArray = words.split(' ')
+  const wordCount = wordsArray.length
+
   useEffect(() => {
     animate(
       'span',
@@ -24,11 +31,15 @@ export const TextGenerateEffect = ({
         filter: filter ? 'blur(0px)' : 'none',
       },
       {
-        duration: duration || 1,
-        delay: stagger(0.2),
-      },
+        // `?? 1` e não `|| 1`: os callers passam duration={0} de propósito,
+        // e `0 || 1` descartava esse valor.
+        duration: duration ?? 1,
+        // Limita o total do stagger: com 0.2 fixo uma frase de 25 palavras
+        // levava ~5s para terminar e aparecia cortada na tela.
+        delay: stagger(Math.min(0.2, TOTAL_STAGGER_SECONDS / wordCount)),
+      }
     )
-  }, [animate, duration, filter])
+  }, [animate, duration, filter, wordCount])
 
   const renderWords = () => {
     return (
@@ -40,7 +51,7 @@ export const TextGenerateEffect = ({
               className={cn(
                 'text-center opacity-0',
                 filter ? 'text-foreground dark:text-white' : '',
-                className, // permite sobrescrever classes passadas externamente
+                className // permite sobrescrever classes passadas externamente
               )}
               style={{
                 filter: filter ? 'blur(10px)' : 'none',
@@ -56,9 +67,7 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn('font-bold', className)}>
-      <div className="text-2xl tracking-wide text-foreground">
-        {renderWords()}
-      </div>
+      <div className="text-2xl text-foreground tracking-wide">{renderWords()}</div>
     </div>
   )
 }

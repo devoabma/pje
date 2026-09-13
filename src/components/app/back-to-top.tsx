@@ -1,3 +1,5 @@
+'use client'
+
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpFromDot } from 'lucide-react'
 import { useCallback, useEffect, useState } from 'react'
@@ -34,13 +36,13 @@ export function BackToTop() {
           animate={{ opacity: 1, right: 16 }}
           exit={{ opacity: 0, right: -10 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-4 right-4 z-20"
+          className="fixed right-4 bottom-4 z-20"
         >
           <Button
             variant="outline"
             type="button"
             onClick={scrollToTop}
-            className="shadow-custom border border-foreground bg-background"
+            className="border border-foreground bg-background shadow-custom"
           >
             <ArrowUpFromDot className="h-4 w-4 font-bold text-foreground transition-all ease-in-out hover:-translate-y-1" />
           </Button>

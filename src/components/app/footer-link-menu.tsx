@@ -1,23 +1,40 @@
-import type { LucideProps } from 'lucide-react'
-import type { ComponentType, ReactNode } from 'react'
+import type { LucideIcon } from 'lucide-react'
+import Link from 'next/link'
+import type { ReactNode } from 'react'
+
+import { cn } from '@/lib/utils'
 
 interface FooterLinkMenuProps {
   link: string
   children: ReactNode
-  icon: ComponentType<LucideProps>
+  icon: LucideIcon
+  iconClassName?: string
+  external?: boolean
 }
 
-export function FooterLinkMenu({
-  children,
-  icon: Icon,
-  link,
-}: FooterLinkMenuProps) {
+export function FooterLinkMenu({ children, icon: Icon, iconClassName, link, external = false }: FooterLinkMenuProps) {
+  const content = (
+    <>
+      <Icon
+        className={cn('size-4 shrink-0 text-muted-foreground/70 transition-colors group-hover:text-primary', iconClassName)}
+      />
+      {children}
+    </>
+  )
+
+  const className = 'group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground'
+
   return (
-    <a href={link} className="flex items-center justify-end">
-      <li className="flex items-center justify-end gap-1.5 font-medium transition-all ease-in-out hover:-translate-y-[1px] hover:cursor-pointer hover:text-muted-foreground max-sm:text-xs">
-        <Icon className="h-4 w-4 max-sm:h-4 max-sm:w-4" />
-        {children}
-      </li>
-    </a>
+    <li>
+      {external ? (
+        <a href={link} target="_blank" rel="noreferrer" className={className}>
+          {content}
+        </a>
+      ) : (
+        <Link href={link} className={className}>
+          {content}
+        </Link>
+      )}
+    </li>
   )
 }

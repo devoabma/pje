@@ -1,7 +1,11 @@
 import { z } from 'zod'
 
 const envSchema = z.object({
-  VITE_MAIN_URL: z.string().url(),
+  NEXT_PUBLIC_MAIN_URL: z.url(),
 })
 
-export const env = envSchema.parse(import.meta.env)
+// As variáveis precisam ser referenciadas estaticamente para o Next conseguir
+// inlinar o valor no bundle do cliente.
+export const env = envSchema.parse({
+  NEXT_PUBLIC_MAIN_URL: process.env.NEXT_PUBLIC_MAIN_URL,
+})

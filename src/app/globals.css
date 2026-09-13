@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@theme {
+  /* Tipologia — Manual de Identidade Visual OAB, p.12 a p.15. */
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
+  --font-institucional: var(--font-montserrat), var(--font-barlow), sans-serif;
+  --font-condensed: var(--font-barlow-condensed), var(--font-barlow), sans-serif;
+  --font-calSans: var(--font-cal-sans), var(--font-barlow), sans-serif;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Paleta institucional OAB — Manual de Identidade Visual, p.5 e p.6.
+     Valores RGB exatos do manual; não alterar sem consultar o manual. */
+  --color-oab-blue: hsl(206.7 100% 26.5%); /* #004B87 - Pantone 301 C */
+  --color-oab-blue-dark: hsl(201.2 100% 16.1%); /* #003552 - gradiente escuro */
+  --color-oab-blue-light: hsl(196.2 69.2% 64.3%); /* #65C1E3 - gradiente claro */
+  --color-oab-red: hsl(357.8 79.2% 47.1%); /* #D71920 - Pantone 485 C */
+  --color-oab-red-dark: hsl(358.2 83.5% 31%); /* #910D11 - gradiente escuro */
+  --color-oab-red-solid: hsl(347.9 87.9% 38.8%); /* #BA0C2F - Pantone 200 C */
+  --color-oab-black: hsl(25.7 8.4% 16.3%); /* #2D2926 - Pantone Black C */
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 201 45% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 201 45% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 201 45% 12%;
+    --primary: 206.7 100% 26.5%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 201 30% 96%;
+    --secondary-foreground: 201 45% 16%;
+    --muted: 201 25% 96%;
+    --muted-foreground: 201 15% 40%;
+    --accent: 196 60% 94%;
+    --accent-foreground: 201 45% 16%;
+    --destructive: 357.8 79.2% 47.1%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 201 20% 88%;
+    --input: 201 20% 88%;
+    --ring: 206.7 100% 26.5%;
+    --radius: 0.5rem;
+    --chart-1: 206.7 100% 26.5%;
+    --chart-2: 196.2 69.2% 64.3%;
+    --chart-3: 357.8 79.2% 47.1%;
+    --chart-4: 358.2 83.5% 31%;
+    --chart-5: 201.2 100% 16.1%;
+  }
+
+  .dark {
+    --background: 201 50% 7%;
+    --foreground: 0 0% 98%;
+    --card: 201 45% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 201 45% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 196.2 69.2% 64.3%;
+    --primary-foreground: 201.2 100% 10%;
+    --secondary: 201 35% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 201 35% 16%;
+    --muted-foreground: 201 18% 68%;
+    --accent: 201 35% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 357.8 75% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 201 30% 20%;
+    --input: 201 30% 20%;
+    --ring: 196.2 69.2% 64.3%;
+    --chart-1: 196.2 69.2% 64.3%;
+    --chart-2: 206.7 100% 46%;
+    --chart-3: 357.8 79.2% 57%;
+    --chart-4: 358.2 70% 45%;
+    --chart-5: 201 40% 40%;
+  }
+}
+
+@layer base {
+  /*
+    O Tailwind v4 deixou de aplicar `cursor: pointer` em botões (passou a seguir
+    o padrão do browser, que é `default`). Restaura o comportamento do v3.
+  */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground text-sm overflow-x-hidden;
+  }
+}
+
+/*
+  Scrollbar derivada dos tokens de tema — antes era um azul fixo (#101f38) que
+  ficava invisível no tema escuro e destoava no claro.
+  `scrollbar-color` cobre Firefox; o bloco ::-webkit-* cobre Chrome e Safari.
+*/
+@layer base {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.4) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+    background-color: hsl(var(--muted-foreground) / 0.35);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.6);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

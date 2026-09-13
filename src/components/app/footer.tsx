@@ -1,91 +1,88 @@
-import { Facebook, Instagram, X, YouTube } from '@mui/icons-material'
-import { motion } from 'framer-motion'
-import { Activity, Gavel, MonitorCheck, Scale, UsersRound } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Headset, LifeBuoy, MonitorCheck } from 'lucide-react'
+import Link from 'next/link'
 
+import { Logo } from '@/components/app/logo'
+import { navItems } from '@/components/app/nav-items'
+import { FacebookIcon, InstagramIcon, XIcon, YoutubeIcon } from '@/components/icons/brands'
+import { OabWave } from '@/components/icons/oab-wave'
 import {
+  LINK_CONTACT_WHATSAPP,
   LINK_FB_OAB,
   LINK_INSTA_OAB,
+  LINK_STATUS_SERVICES,
   LINK_X_OAB,
   LINK_YT_OAB,
 } from '@/utils/links-download-access'
 
-import LogoDark from '../../assets/logo-oabma-dark.png'
-import LogoWhite from '../../assets/logo-oabma-white.png'
-import { useTheme } from '../theme/theme-provider'
+import { FooterColumn } from './footer-column'
 import { FooterLinkDigital } from './footer-link-digital'
 import { FooterLinkMenu } from './footer-link-menu'
 
+const socialLinks = [
+  { link: LINK_INSTA_OAB, label: 'Instagram da OAB-MA', icon: InstagramIcon },
+  { link: LINK_X_OAB, label: 'X da OAB-MA', icon: XIcon },
+  { link: LINK_YT_OAB, label: 'YouTube da OAB-MA', icon: YoutubeIcon },
+  { link: LINK_FB_OAB, label: 'Facebook da OAB-MA', icon: FacebookIcon },
+]
+
 export function Footer() {
-  const { theme } = useTheme()
+  const year = new Date().getFullYear()
 
   return (
-    <div className="mt-28 overflow-x-hidden flex flex-col items-center justify-center border-t">
-      <div className="container overflow-hidden flex h-48 items-center justify-between gap-2">
-        <motion.div
-          className="space-y-4"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >
-          <Link to="/">
-            {theme === 'light' ? (
-              <img src={LogoDark} className="h-12" alt="OAB Maranhão" />
-            ) : theme === 'dark' ? (
-              <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
-            ) : theme === 'system' &&
-              window.matchMedia('(prefers-color-scheme: dark)').matches ? (
-              <img src={LogoWhite} className="h-12" alt="OAB Maranhão" />
-            ) : (
-              <img src={LogoDark} className="h-12" alt="OAB Maranhão" />
-            )}
-          </Link>
+    <footer className="mt-28">
+      {/* Onda institucional do manual da marca (capa e contracapa). */}
+      <div aria-hidden className="h-14 w-full overflow-hidden sm:h-20">
+        <OabWave className="h-full w-full" />
+      </div>
 
-          <div className="flex items-center justify-center gap-2.5">
-            <FooterLinkDigital link={LINK_INSTA_OAB} icon={Instagram} />
-            <FooterLinkDigital link={LINK_X_OAB} icon={X} />
-            <FooterLinkDigital link={LINK_YT_OAB} icon={YouTube} />
-            <FooterLinkDigital link={LINK_FB_OAB} icon={Facebook} />
+      <div className="container py-12">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-12">
+          <div className="space-y-5">
+            <Link href="/" aria-label="Ir para a página inicial" className="inline-block">
+              <Logo className="h-11" />
+            </Link>
+
+            <p className="max-w-xs text-muted-foreground text-sm leading-relaxed">
+              Acesso rápido e direto aos tribunais que utilizam o pJe, e aos sistemas do dia a dia da advocacia.
+            </p>
+
+            <div className="flex items-center gap-2">
+              {socialLinks.map(social => (
+                <FooterLinkDigital key={social.link} {...social} />
+              ))}
+            </div>
           </div>
-        </motion.div>
 
-        <motion.ul
-          className="space-y-3 text-xs"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.9 }}
-        >
-          <FooterLinkMenu link="/" icon={Scale}>
-            pJe OAB
-          </FooterLinkMenu>
-          <FooterLinkMenu link="/inss-digital" icon={UsersRound}>
-            Inss Digital
-          </FooterLinkMenu>
-          <FooterLinkMenu link="/zone-criminal" icon={Gavel}>
-            Zona Criminal
-          </FooterLinkMenu>
-          <FooterLinkMenu link="/sei" icon={MonitorCheck}>
-            SEI
-          </FooterLinkMenu>
-          <FooterLinkMenu link="/portal-advocacia" icon={MonitorCheck}>
-            Portal Advocacia
-          </FooterLinkMenu>
-          <FooterLinkMenu link="/status-services" icon={Activity}>
-            Status
-          </FooterLinkMenu>
-        </motion.ul>
+          <FooterColumn title="Navegação">
+            {navItems.map(({ href, label, icon, iconClassName }) => (
+              <FooterLinkMenu key={href} link={href} icon={icon} iconClassName={iconClassName}>
+                {label}
+              </FooterLinkMenu>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn title="Suporte">
+            <FooterLinkMenu external link={LINK_CONTACT_WHATSAPP} icon={Headset}>
+              Falar com o suporte
+            </FooterLinkMenu>
+            <FooterLinkMenu link="/#suporte" icon={LifeBuoy}>
+              Downloads e instalação
+            </FooterLinkMenu>
+            <FooterLinkMenu external link={LINK_STATUS_SERVICES} icon={MonitorCheck}>
+              Status dos tribunais
+            </FooterLinkMenu>
+          </FooterColumn>
+        </div>
       </div>
 
-      <div className="h-[1px] w-96 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700 md:w-[45rem] lg:w-[60rem]" />
-
-      <div className="container flex h-24 flex-col items-center justify-center gap-2 font-medium">
-        <span className="flex items-center justify-center gap-1">
-          &copy; {new Date().getFullYear()} - Gerência de Tecnologia da
-          Informação
-        </span>
+      <div className="border-t">
+        <div className="container flex flex-col items-center justify-between gap-2 py-6 text-center sm:flex-row sm:pe-16 sm:text-left">
+          <p className="font-institucional text-muted-foreground text-xs">
+            &copy; {year} Ordem dos Advogados do Brasil &mdash; Seccional Maranhão
+          </p>
+          <p className="font-institucional text-muted-foreground text-xs">Gerência de Tecnologia da Informação</p>
+        </div>
       </div>
-    </div>
+    </footer>
   )
 }

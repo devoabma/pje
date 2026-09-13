@@ -1,73 +1,43 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+'use client'
 
-type Theme = 'dark' | 'light' | 'system'
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useSyncExternalStore } from 'react'
 
-type ThemeProviderProps = {
-  children: React.ReactNode
-  defaultTheme?: Theme
-  storageKey?: string
-}
+import { applyTheme, type ResolvedTheme, type Theme, themeStore } from './theme-store'
 
 type ThemeProviderState = {
   theme: Theme
+  resolvedTheme: ResolvedTheme
   setTheme: (theme: Theme) => void
 }
 
-const initialState: ThemeProviderState = {
-  theme: 'system',
-  setTheme: () => null,
-}
+const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined)
 
-const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const theme = useSyncExternalStore(themeStore.subscribe, themeStore.getTheme, themeStore.getServerTheme)
 
-export function ThemeProvider({
-  children,
-  defaultTheme = 'system',
-  storageKey = 'vite-ui-theme',
-  ...props
-}: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
-  )
+  const resolvedTheme = useSyncExternalStore(themeStore.subscribe, themeStore.getResolvedTheme, themeStore.getServerResolvedTheme)
 
+  // Sincroniza o DOM com o tema resolvido. O primeiro paint já vem correto
+  // graças ao <ThemeScript />; aqui tratamos as trocas posteriores.
   useEffect(() => {
-    const root = window.document.documentElement
+    applyTheme(resolvedTheme)
+  }, [resolvedTheme])
 
-    root.classList.remove('light', 'dark')
+  const setTheme = useCallback((next: Theme) => {
+    themeStore.setTheme(next)
+  }, [])
 
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        .matches
-        ? 'dark'
-        : 'light'
+  const value = useMemo(() => ({ theme, resolvedTheme, setTheme }), [theme, resolvedTheme, setTheme])
 
-      root.classList.add(systemTheme)
-      return
-    }
-
-    root.classList.add(theme)
-  }, [theme])
-
-  const value = {
-    theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme)
-      setTheme(theme)
-    },
-  }
-
-  return (
-    <ThemeProviderContext.Provider {...props} value={value}>
-      {children}
-    </ThemeProviderContext.Provider>
-  )
+  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>
 }
 
-export const useTheme = () => {
+export function useTheme() {
   const context = useContext(ThemeProviderContext)
 
-  if (context === undefined)
+  if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider')
+  }
 
   return context
 }
