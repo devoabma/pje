@@ -667,7 +667,7 @@ export const dataStates: States[] = [
       },
       {
         name: 'TJRN 2° GRAU',
-        url: 'https://pje2gconsulta.tjrn.jus.br/consultapublica/ConsultaPublica/listView.seam',
+        url: 'https://pje2g.tjrn.jus.br/pje/login.seam',
       },
       {
         name: 'Justiça Eleitoral',

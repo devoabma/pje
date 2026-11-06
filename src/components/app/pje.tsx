@@ -110,7 +110,7 @@ export function PJE() {
         />
       </div>
 
-      <Button type="button" className="inline-flex w-full py-[18px] font-bold" onClick={handleAccessCourt}>
+      <Button type="button" className="inline-flex w-full py-4.5 font-bold" onClick={handleAccessCourt}>
         Ir para tribunal
         <ExternalLink className="ml-2 h-5 w-5" />
       </Button>
